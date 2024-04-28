@@ -21,7 +21,6 @@ set scroll-step 50
 show-directories "true"
 show-hidden "true"
 unmap f
-unmap q
 map f toggle_fullscreen
 map [fullscreen] f toggle_fullscreen
 
