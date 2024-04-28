@@ -1,0 +1,6 @@
+@import ".config/wofi/style.css";
+window {
+	font-family: "Ubuntu Nerd Font";
+	font-size: 16px;
+	padding: 5px;
+}

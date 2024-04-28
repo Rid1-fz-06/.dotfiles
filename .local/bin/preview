@@ -1,0 +1,26 @@
+#!/bin/env bash
+
+test -d "$1" && { eza --classify --icons --group-directories-first --all --color=always "$1" && exit 0; }
+
+__mime_type="$(file -b --mime-type --dereference "$1")"
+
+case "$__mime_type" in
+	image/* | video/* )
+		exiftool "$1"
+		;;
+	text/* )
+		bat "$1"
+		;;
+	application/* )
+		case "$__mime_type" in
+			*/pdf )
+				exiftool "$1"
+				;;
+			*/gzip )
+				[[ "$1" = *.tar* ]] && tar -tvf "$1" || gunzip -l "$1"
+				;;
+			*/x-xz )
+				[[ "$1" = *.tar* ]] && tar -tvf "$1" || xz -l "$1"
+				;;
+		esac
+esac

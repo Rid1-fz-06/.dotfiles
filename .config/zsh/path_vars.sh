@@ -1,0 +1,1 @@
+../bash/path_vars.sh

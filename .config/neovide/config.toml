@@ -1,0 +1,11 @@
+wsl = false
+no-multigrid = false
+vsync = true
+maximized = true
+srgb = true
+idle = true
+frame = "full"
+
+[font]
+normal = ["JetBrainsMono Nerd Font Propo"]
+size = 16

@@ -1,0 +1,11 @@
+#!/bin/bash
+
+if [ $# -eq 0 ]; then
+    alacritty --title Terminal
+else
+    if [[ $1 = -* ]]; then
+        alacritty --title Terminal "$@"
+    else
+        alacritty --title Terminal --command "$@"
+    fi
+fi
