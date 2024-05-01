@@ -527,7 +527,9 @@ mods = "Control"
 [window]
 decorations = "full"
 dynamic_padding = true
-opacity = 1.0
+opacity = 1
+startup_mode = "Maximized"
+dynamic_title = false
 
 [window.padding]
 x = 0
