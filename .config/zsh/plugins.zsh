@@ -11,7 +11,10 @@ __plugins=(
 for __plugin in $__plugins; do
 	__scripts=(${(@s/:/)__plugin})
 	for __script in ${__scripts[@]}; do
-		{ [ -f "$__script" ] && . "$__script";} || true
+		if [ -f "$__script" ]; then
+			. "$__script"
+			break
+		fi
 	done
 done
 
