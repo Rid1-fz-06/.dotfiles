@@ -30,3 +30,4 @@ This is my **Very Minimal** personal configs for the tools I use as daily-driver
 - [starship](https://starship.rs)
 - [feh](https://feh.finalrewind.org)
 - [wlogout](https://github.com/ArtsyMacaw/wlogout)
+- [fastfetch](https://github.com/fastfetch-cli/fastfetch)
