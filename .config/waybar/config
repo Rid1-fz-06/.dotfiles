@@ -83,7 +83,7 @@
         "format-icons": [" 󰤯"," 󰤟"," 󰤢"," 󰤥"," 󰤨"],
         "format-ethernet": " 󰀂",
         "format-disconnected" : " 󰤭",
-        "format-disabled": " 󰤭",
+        "format-disabled": " 󰲛",
 	    "tooltip-format-wifi": "{icon} {essid}",
         "tooltip-format-ethernet": "󰀂  {ifname}",
 	    "tooltip-format-disconnected": "Disconnected",
@@ -121,10 +121,10 @@
         "format-bluetooth": " 󰂰",
         "nospacing": 1,
         "tooltip-format": "Volume : {volume}%",
-        "format-muted": " 󰝟",
+        "format-muted": " ",
         "format-icons": {
             "headphone": " 󰋋",
-            "default": [" 󰖀"," 󰕾"," "]
+            "default": [" "," "," "]
         },
         "on-click": "pamixer --toggle-mute",
         "scroll-step": 1,
