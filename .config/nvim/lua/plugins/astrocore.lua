@@ -34,7 +34,7 @@ return {
 				mouse = "nv",
 				mousemodel = "extend",
 				swapfile = false,
-				cmdheight = 0,
+				cmdheight = 1,
 			},
 
 			-- global variables

@@ -64,6 +64,7 @@ vim.filetype.add({
 
 -- commentstrings
 vim.api.nvim_create_augroup("set_commentstring", { clear = true })
+vim.api.nvim_create_augroup("set_cmdheight", { clear = true })
 
 local cstrings = {
 	hyprlang = "#%s",
@@ -77,3 +78,13 @@ for lang, cstring in pairs(cstrings) do
 		command = [[set commentstring=]] .. cstring,
 	})
 end
+
+vim.api.nvim_create_autocmd("InsertEnter", {
+	group = "set_cmdheight",
+	command = [[set cmdheight=0]],
+})
+
+vim.api.nvim_create_autocmd("InsertLeave", {
+	group = "set_cmdheight",
+	command = [[set cmdheight=1]],
+})
