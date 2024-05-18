@@ -70,7 +70,7 @@ local cstrings = {
 	qml = "//%s",
 }
 
-for lang, cstring in ipairs(cstrings) do
+for lang, cstring in pairs(cstrings) do
 	vim.api.nvim_create_autocmd("FileType", {
 		group = "set_commentstring",
 		pattern = lang,
