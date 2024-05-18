@@ -70,7 +70,7 @@
     },
     "memory": {
         "interval": 1,
-        "format": "󰍛 {}%",
+        "format": " {}%",
         "max-length": 10,
         "on-click": "alacritty --config-file /home/rid1/.config/alacritty/no-maps.toml --title Htop --class htop -e htop",
         "states": {
@@ -82,8 +82,8 @@
         "format-wifi" : "{icon}",
         "format-icons": [" 󰤯"," 󰤟"," 󰤢"," 󰤥"," 󰤨"],
         "format-ethernet": " 󰀂",
-        "format-disconnected" : " 󰤭",
-        "format-disabled": " 󰲛",
+        "format-disconnected" : " 󰲛",
+        "format-disabled": " 󰤭",
 	    "tooltip-format-wifi": "{icon} {essid}",
         "tooltip-format-ethernet": "󰀂  {ifname}",
 	    "tooltip-format-disconnected": "Disconnected",
