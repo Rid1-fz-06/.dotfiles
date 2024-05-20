@@ -1,6 +1,6 @@
 [Desktop Entry]
-Name=Images
-GenericName=Images
+Name=Photos
+GenericName=Photos
 Comment=A simple image viewer
 TryExec=feh
 Exec=fehl
