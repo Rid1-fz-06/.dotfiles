@@ -2,7 +2,10 @@
 
 # from pygments.token import Error, Text
 from IPython.core import ultratb
-c = get_config()  # noqa
+from pygments.styles import get_style_by_name
+from pygments.util import ClassNotFound
+
+c = get_config()
 
 # ------------------------------------------------------------------------------
 # InteractiveShellApp(Configurable) configuration
@@ -669,10 +672,12 @@ c.TerminalInteractiveShell.highlight_matching_brackets = True
 
 # # Use the instance to format a traceback
 # formatted_traceback = tb.format_exception(etype, value, tb)
-c.TerminalInteractiveShell.highlighting_style = "dracula"
 
-c.TerminalInteractiveShell.highlighting_style_overrides = {
-}
+try:
+    c.TerminalInteractiveShell.highlighting_style = get_style_by_name("catppuccin-mocha")
+except ClassNotFound as ex:
+    print(f"Failed to set theme: {ex}")
+
 ultratb.VerboseTB._tb_highlight = "bg:#1a1b26"
 # Override highlighting format for specific tokens
 #  Default: {}
