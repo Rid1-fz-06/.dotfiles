@@ -63,3 +63,5 @@ standard_dialogs=xdgdesktopportal
 NOTE: a reboot might be needed.
 
 To make firefox use xdg-desktop-portal, go to `about:config` and change `widget.use-xdg-desktop-portal.file-picker` and `widget.use-xdg-desktop-portal.mime-handler` to `1` from `2`
+
+To make QT5 applications follow theme, those should be run setting `QT_QPA_PLATFORMTHEME` to `qt5ct`. For example, to run vlc: `QT_QPA_PLATFORMTHEME=qt5ct vlc`
