@@ -88,7 +88,7 @@
         "tooltip-format-ethernet": "󰀂  {ifname}",
 	    "tooltip-format-disconnected": "Disconnected",
 	    "tooltip-format-disabled": "Disabled",
-        "on-click": "bash -c \"nmcli radio wifi \\\"$(nmcli radio wifi | sed 's/enabled/off/;s/disabled/on/')\\\"\"",
+        // "on-click": "bash -c \"nmcli radio wifi \\\"$(nmcli radio wifi | sed 's/enabled/off/;s/disabled/on/')\\\"\"",
 	    "interval": 1,
 	    "nospacing": 1,
     },
