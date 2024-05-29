@@ -95,7 +95,8 @@
   animation-duration: 2s;
 }
 
-#clock {}
+#clock {
+}
 
 #cpu {
   background: #1e1e2e;
@@ -142,6 +143,10 @@
   color: #f9e2af;
 }
 
+#network.disabled {
+  color: #f38ba8;
+}
+
 #pulseaudio {
   /* No styles */
 }
@@ -169,7 +174,7 @@
 }
 
 #tray {
-  /* No styles */
+  background: #1e1e2e;
 }
 
 #window {
@@ -192,6 +197,7 @@
 }
 
 #workspaces button.urgent {
+  border-color: #f38ba8;
   background-color: #f9e2af;
   color: #1e1e2e;
 }
