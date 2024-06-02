@@ -32,6 +32,12 @@ This is my **Very Minimal** personal configs for the tools I use as daily-driver
 - [wlogout](https://github.com/ArtsyMacaw/wlogout)
 - [fastfetch](https://github.com/fastfetch-cli/fastfetch)
 
+To install most of the packages in fedora:
+
+```bash
+sudo dnf5 install "qt6-qtwayland" "qt5-qtwayland" "qt6ct" "qt5ct" "alacritty" "kvantum" "hyprland" "sddm" "ripgrep" "plocate" "eza" "fzf" "git" "nodejs" "zsh" "wlogout" "gh" "bat" "feh" "zathura" "zathura-pdf-poppler" "waybar" "symlinks" "trash-cli" "neovim" "kvantum-qt5" "lxappearance" "gnome-tweaks" "fd-find" "exiftool"
+```
+
 ## Theaming
 
 Different applications uses different protocols for theaming. To set,
