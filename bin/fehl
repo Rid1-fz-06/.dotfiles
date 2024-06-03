@@ -1,8 +1,0 @@
-#!/bin/env bash
-
-if [ -z "$1" ]; then feh --recursive "$HOME/Pictures"
-else
-  if [ -d "$1" ]; then feh --recursive "$1"
-  else feh --start-at "$1"
-  fi
-fi
