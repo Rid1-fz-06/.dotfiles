@@ -53,7 +53,7 @@ It is better to use [Kvantum](https://github.com/tsujan/Kvantum) for QT theaming
 
 To use specific file picker, add the following to `$HOME/.config/xdg-desktop-portal/portals.conf`
 
-```
+```ini
 [preferred]
 default=hyprland
 org.freedesktop.impl.portal.FileChooser=gtk
@@ -61,7 +61,7 @@ org.freedesktop.impl.portal.FileChooser=gtk
 
 QT5 applications might not use default file picker. To fix this, add the following to `$HOME/.config/qt5ct/qt5ct.conf`
 
-```
+```ini
 [Appearance]
 standard_dialogs=xdgdesktopportal
 ```
