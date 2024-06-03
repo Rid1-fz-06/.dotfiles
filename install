@@ -41,6 +41,10 @@ function __linker {
   
   local __target="${HOME}/${2//"${DOTFILES}/"}"
   
+  if ! [[ -d "$(dirname "${__target}")" ]]; then
+    mkdir -p "$(dirname "${__target}")"
+  fi
+  
   if [[ -e "$__target" ]]; then
     __logger --error "$__target already exists"
     if $__skip; then
@@ -149,6 +153,16 @@ function main {
 
   if $install_packages; then
     __install_packages
+  fi
+  
+  if ! [[ -e "$DOTFILES" ]]; then
+    mkdir -p "$DOTFILES"
+    
+    if ! command -v git; then
+      __logger --error 'git not found. could not clone dotfiles'
+      exit 1
+    fi
+    git clone --depth=1 'https://github.com/Rid1-fz-06/.dotfiles.git' "$DOTFILES"
   fi
   
   __link_config
