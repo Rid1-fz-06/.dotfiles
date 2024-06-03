@@ -71,3 +71,21 @@ NOTE: a reboot might be needed.
 To make firefox use xdg-desktop-portal, go to `about:config` and change `widget.use-xdg-desktop-portal.file-picker` and `widget.use-xdg-desktop-portal.mime-handler` to `1` from `2`
 
 To make QT5 applications follow theme, those should be run setting `QT_QPA_PLATFORMTHEME` to `qt5ct`. For example, to run vlc: `QT_QPA_PLATFORMTHEME=qt5ct vlc`
+
+## Installation
+
+Clone this repository
+
+```bash
+mkdir -p $HOME/.dotfiles
+git clone --depth=1 'https://github.com/Rid1-fz-06/.dotfiles.git' "$HOME/.dotfiles"
+cd "$HOME/.dotfiles"
+```
+
+Run the installer
+
+```bash
+./install
+```
+
+pass `--help` to installer for more options
