@@ -9,7 +9,7 @@ __packages=(
   "neovim" "kvantum-qt5" "lxappearance" "gnome-tweaks" "fd-find" "exiftool" "scdoc"
   "freetype-devel" "cairo-devel" "pango-devel" "wayland-devel" "libxkbcommon-devel"
   "harfbuzz""wayland-protocols-devel" "zsh-autosuggestions" "zsh-syntax-highlighting"
-  "meson" 
+  "meson" "hyprpicker"
 )
 
 __groups=(
