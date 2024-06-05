@@ -1,6 +1,6 @@
 #!/bin/env bash
 
-__curr_workspace="$(hyprctl activeworkspace | grep -o -E "ID ." | cut -d' ' -f2)"
+__curr_workspace="$(hyprctl activeworkspace -j | jq '.["id"]')"
 __max_hypr_workspaces="$([ -z "$MAX_HYPR_WORKSPACES" ] && echo 0 || echo "$MAX_HYPR_WORKSPACES")"
 
 function usage {
