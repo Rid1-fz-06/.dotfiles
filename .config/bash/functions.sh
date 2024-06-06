@@ -5,7 +5,7 @@ function ff {
 	__arg="${1:-.}"
 	test -d "$__arg" || return 1
 
-	__path="$(fd -Ha --no-ignore --type directory --type symlink --type file --follow ".*" "$__arg" | fzf --ansi --height=100% --preview="preview {}" --preview-window 'top,60%,border-bottom')"
+	__path="$(fd -Ha --no-ignore --type directory --type symlink --type file --follow ".*" "$__arg" | fzf --ansi --height=100% --preview="_preview {}" --preview-window 'top,60%,border-bottom')"
 
 	[ -z "$__path" ] && return 1
 	test -d "$__path" && {

@@ -17,10 +17,10 @@ case "$__mime_type" in
 				exiftool "$1"
 				;;
 			*/gzip )
-				[[ "$1" = *.tar* ]] && tar -tvf "$1" || gunzip -l "$1"
+				[[ "$1" = *.tar* ]] && { tar -tvf "$1" || gunzip -l "$1"; }
 				;;
 			*/x-xz )
-				[[ "$1" = *.tar* ]] && tar -tvf "$1" || xz -l "$1"
+				[[ "$1" = *.tar* ]] && { tar -tvf "$1" || xz -l "$1"; }
 				;;
 		esac
 esac
