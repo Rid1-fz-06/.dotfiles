@@ -62,6 +62,6 @@ Comment[zh_CN]=显示系统进程
 Comment[zh_TW]=顯示系統行程
 Icon=htop
 TryExec=htop
-Exec=alacritty --config-file /home/rid1/.config/alacritty/no-maps.toml --title Htop --class htop -e htop
+Exec=bash -c 'alacritty --config-file $XDG_CONFIG_HOME/alacritty/no-maps.toml --title Htop --class htop -e htop'
 Terminal=false
 Categories=System;Monitor;ConsoleOnly;
