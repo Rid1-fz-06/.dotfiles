@@ -27,10 +27,11 @@ This is my **Very Minimal** personal configs for the tools I use as daily-driver
 - [NerdFonts](https://www.nerdfonts.com) (specifically `JetBrainsMono Nerd Font` and `Ubuntu Nerd Font`)
 - [zathura](https://pwmt.org/projects/zathura)
 - [swaybg](https://github.com/swaywm/swaybg) (optional)
-- [starship](https://starship.rs)
+- [starship](https://starship.rs) (optional)
 - [feh](https://feh.finalrewind.org)
 - [wlogout](https://github.com/ArtsyMacaw/wlogout)
 - [fastfetch](https://github.com/fastfetch-cli/fastfetch)
+- [wl-clip-persist](https://github.com/Linus789/wl-clip-persist)
 
 To install most of the packages in fedora:
 
