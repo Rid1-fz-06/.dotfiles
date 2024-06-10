@@ -72,6 +72,14 @@ To make firefox use xdg-desktop-portal, go to `about:config` and change `widget.
 
 To make QT5 applications follow theme, those should be run setting `QT_QPA_PLATFORMTHEME` to `qt5ct`. For example, to run vlc: `QT_QPA_PLATFORMTHEME=qt5ct vlc`
 
+## Native Wayland Support
+
+Electron applications, such as Chromium, Visual Studio Code, Discord supports Wayland natively, but uses XWayland. to make them use Wayland, pass these commandline flags
+
+```bash
+--enable-features=UseOzonePlatform --ozone-platform=wayland
+```
+
 ## Installation
 
 Clone this repository
