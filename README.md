@@ -1,6 +1,6 @@
 # My Personal Configs
 
-This is my **Very Minimal** personal configs for the tools I use as daily-drivers.
+These are my personal configs for the tools I use.
 
 ## Dependencies
 
@@ -33,22 +33,18 @@ This is my **Very Minimal** personal configs for the tools I use as daily-driver
 - [fastfetch](https://github.com/fastfetch-cli/fastfetch)
 - [wl-clip-persist](https://github.com/Linus789/wl-clip-persist)
 
-To install most of the packages in fedora:
-
-```bash
-sudo dnf5 install "qt6-qtwayland" "qt5-qtwayland" "qt6ct" "qt5ct" "alacritty" "kvantum" "hyprland" "sddm" "ripgrep" "plocate" "eza" "fzf" "git" "nodejs" "zsh" "wlogout" "gh" "bat" "feh" "zathura" "zathura-pdf-poppler" "waybar" "symlinks" "trash-cli" "neovim" "kvantum-qt5" "lxappearance" "gnome-tweaks" "fd-find" "exiftool"
-```
+Almost all of these packages are included in the installer script
 
 ## Theaming
 
-Different applications uses different protocols for theaming. To set,
+Different applications uses different protocols for theaming. To set theme, use specific tools...
 
-- GTK3 theme, use [lxappearance](https://github.com/lxde/lxappearance)
-- GTK4 theme, use [Gnome Tweaks](https://gitlab.gnome.org/GNOME/gnome-tweaks)
-- QT5 theme, use [qt5ct](https://github.com/desktop-app/qt5ct)
-- QT6 theme, use [qt6ct](https://github.com/trialuser02/qt6ct)
+- GTK3: [lxappearance](https://github.com/lxde/lxappearance)
+- GTK4: [Gnome Tweaks](https://gitlab.gnome.org/GNOME/gnome-tweaks)
+- QT5: [qt5ct](https://github.com/desktop-app/qt5ct)
+- QT6: [qt6ct](https://github.com/trialuser02/qt6ct)
 
-It is better to use [Kvantum](https://github.com/tsujan/Kvantum) for QT theaming. But `qt5ct` doesn't detect Kvantum by default. For this, `kvantum-qt5` package needed to be installed.
+It is **better** to use [Kvantum](https://github.com/tsujan/Kvantum) for QT theaming. But `qt5ct` doesn't detect Kvantum by default. For this, `kvantum-qt5` package needed to be installed.
 
 ## Desktop Portals
 
@@ -56,7 +52,7 @@ To use specific file picker, add the following to `$HOME/.config/xdg-desktop-por
 
 ```dosini
 [preferred]
-default=hyprland
+default=hyprland;gtk
 org.freedesktop.impl.portal.FileChooser=gtk
 ```
 
@@ -71,14 +67,24 @@ NOTE: a reboot might be needed.
 
 To make firefox use xdg-desktop-portal, go to `about:config` and change `widget.use-xdg-desktop-portal.file-picker` and `widget.use-xdg-desktop-portal.mime-handler` to `1` from `2`
 
-To make QT5 applications follow theme, those should be run setting `QT_QPA_PLATFORMTHEME` to `qt5ct`. For example, to run vlc: `QT_QPA_PLATFORMTHEME=qt5ct vlc`
+To make QT5 applications follow theme, those should be run setting `QT_QPA_PLATFORMTHEME` to `qt5ct`. For example, to run VLC:
+
+```bash
+env QT_QPA_PLATFORMTHEME=qt5ct vlc
+```
 
 ## Native Wayland Support
 
 Electron applications, such as Chromium, Visual Studio Code, Discord supports Wayland natively, but uses XWayland. to make them use Wayland, pass these commandline flags
 
-```bash
+```
 --enable-features=UseOzonePlatform --ozone-platform=wayland
+```
+
+For example, to run Chromium:
+
+```bash
+chromium-browser --enable-features=UseOzonePlatform --ozone-platform=wayland
 ```
 
 ## Installation
