@@ -60,7 +60,7 @@ function __linker {
 }
 
 function __link_config {
-  logger --info "linking configs"
+  __logger --info "linking configs"
   
   for __conf in "${DOTFILES}"/.config/*; do
     __linker --backup "${__conf}"
