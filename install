@@ -14,7 +14,7 @@ __development_packages=(
   "scdoc" "harfbuzz" "wayland-protocols-devel" "meson" "ninja"
 )
 
-__theaming_tools=(
+__theming_tools=(
   "kvantum-qt5" "lxappearance" "gnome-tweaks" "qt6ct" "qt5ct"
 )
 
@@ -118,8 +118,8 @@ function __install_packages {
 
   __logger --info "installing required packages"
   sudo dnf5 install "${__required_packages[@]}" --setopt='max_parallel_downloads=10' --assumeyes
-  __logger --info "installing theaming tools and development packages"
-  sudo dnf5 install "${__theaming_tools[@]}" "${__development_packages[@]}" --setopt='max_parallel_downloads=10' --setopt='install_weak_deps=False' --assumeyes
+  __logger --info "installing theming tools and development packages"
+  sudo dnf5 install "${__theming_tools[@]}" "${__development_packages[@]}" --setopt='max_parallel_downloads=10' --setopt='install_weak_deps=False' --assumeyes
   __logger --info "installing required groups"
   sudo dnf5 group install "${__groups[@]}" --setopt='max_parallel_downloads=10' --with-optional --assumeyes
 
