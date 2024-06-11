@@ -2,14 +2,20 @@
 
 DOTFILES=${DOTFILES:-${HOME}/.dotfiles}
 
-__packages=(
-  "qt6-qtwayland" "qt5-qtwayland" "qt6ct" "qt5ct" "alacritty" "kvantum" "polkit-kde"
+__required_packages=(
+  "qt6-qtwayland" "qt5-qtwayland" "alacritty" "kvantum" "polkit-kde" "hyprpicker"
   "hyprland" "sddm" "ripgrep" "plocate" "eza" "fzf" "git" "nodejs" "zsh" "wlogout"
   "gh" "bat" "feh" "zathura" "zathura-pdf-poppler" "waybar" "symlinks" "trash-cli"
-  "neovim" "kvantum-qt5" "lxappearance" "gnome-tweaks" "fd-find" "exiftool" "scdoc"
+  "neovim" "fd-find" "exiftool" "zsh-autosuggestions" "zsh-syntax-highlighting"
+)
+
+__development_packages=(
   "freetype-devel" "cairo-devel" "pango-devel" "wayland-devel" "libxkbcommon-devel"
-  "harfbuzz" "wayland-protocols-devel" "zsh-autosuggestions" "zsh-syntax-highlighting"
-  "meson" "hyprpicker" "ninja"
+  "scdoc" "harfbuzz" "wayland-protocols-devel" "meson" "ninja"
+)
+
+__theaming_tools=(
+  "kvantum-qt5" "lxappearance" "gnome-tweaks" "qt6ct" "qt5ct"
 )
 
 __groups=(
@@ -94,25 +100,28 @@ function __install_packages {
   # check dnf5
   if ! command -v dnf5 &>/dev/null; then
     __logger --info "installing dnf5"
-    sudo dnf install dnf5 --refresh -y
+    sudo dnf install dnf5 --refresh --assumeyes
   fi
 
   # enable rpm fusion
   __logger --info "enabling rpm fusion repos"
   sudo dnf install \
     "https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm" \
-    "https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm" -y
-  sudo dnf config-manager --enable 'fedora-cisco-openh264' -y
+    "https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm" --assumeyes
+  sudo dnf config-manager --enable 'fedora-cisco-openh264' --assumeyes
 
   # install dnf packages
   __logger --info "refreshing cache"
   sudo dnf5 makecache --refresh -y
   __logger --info "updating packages"
-  sudo dnf5 upgrade --setopt='max_parallel_downloads=10' -y
+  sudo dnf5 upgrade --setopt='max_parallel_downloads=10' --assumeyes
+  
   __logger --info "installing required packages"
-  sudo dnf5 install "${__packages[@]}" --setopt='max_parallel_downloads=10' -y
+  sudo dnf5 install "${__required_packages[@]}" --setopt='max_parallel_downloads=10' --assumeyes
+  __logger --info "installing theaming tools and development packages"
+  sudo dnf5 install "${__theaming_tools[@]}" "${__development_packages[@]}" --setopt='max_parallel_downloads=10' --setopt='install_weak_deps=False' --assumeyes
   __logger --info "installing required groups"
-  sudo dnf5 group install "${__groups[@]}" --setopt='max_parallel_downloads=10' -y
+  sudo dnf5 group install "${__groups[@]}" --setopt='max_parallel_downloads=10' --assumeyes
 
   # install tofi
   __logger --info "installing tofi"
@@ -158,7 +167,7 @@ function main {
   if ! [[ -e "$DOTFILES" ]]; then
     mkdir -p "$DOTFILES"
     
-    if ! command -v git; then
+    if ! command -v git &>/dev/null; then
       __logger --error 'git not found. could not clone dotfiles'
       exit 1
     fi
