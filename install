@@ -121,7 +121,7 @@ function __install_packages {
   __logger --info "installing theaming tools and development packages"
   sudo dnf5 install "${__theaming_tools[@]}" "${__development_packages[@]}" --setopt='max_parallel_downloads=10' --setopt='install_weak_deps=False' --assumeyes
   __logger --info "installing required groups"
-  sudo dnf5 group install "${__groups[@]}" --setopt='max_parallel_downloads=10' --assumeyes
+  sudo dnf5 group install "${__groups[@]}" --setopt='max_parallel_downloads=10' --with-optional --assumeyes
 
   # install tofi
   __logger --info "installing tofi"
