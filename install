@@ -51,12 +51,12 @@ function __linker {
       __logger --info "skipping..."
       return
     fi
-    
     __logger --info "backing up $__target -> $__target.bak"
     mv "$__target" "$__target.bak"
-    __logger --info "creating link $2 -> $__target"
-    ln -s "$2" "$__target"
   fi
+  
+  __logger --info "creating link $2 -> $__target"
+  ln -s "$2" "$__target"
 }
 
 function __link_config {
