@@ -44,13 +44,13 @@ function __linker {
       __logger --error 'invalied argument for __linker'
       exit 1;;
   esac
-  
+
   local __target="${HOME}/${2//"${DOTFILES}/"}"
-  
+
   if ! [[ -d "$(dirname "${__target}")" ]]; then
     mkdir -p "$(dirname "${__target}")"
   fi
-  
+
   if [[ -e "$__target" ]]; then
     __logger --error "$__target already exists"
     if $__skip; then
@@ -60,14 +60,14 @@ function __linker {
     __logger --info "backing up $__target -> $__target.bak"
     mv "$__target" "$__target.bak"
   fi
-  
+
   __logger --info "creating link $2 -> $__target"
   ln -s "$2" "$__target"
 }
 
 function __link_config {
   __logger --info "linking configs"
-  
+
   for __conf in "${DOTFILES}"/.config/*; do
     __linker --backup "${__conf}"
   done
@@ -115,7 +115,7 @@ function __install_packages {
   sudo dnf5 makecache --refresh -y
   __logger --info "updating packages"
   sudo dnf5 upgrade --setopt='max_parallel_downloads=10' --assumeyes
-  
+
   __logger --info "installing required packages"
   sudo dnf5 install "${__required_packages[@]}" --setopt='max_parallel_downloads=10' --assumeyes
   __logger --info "installing theaming tools and development packages"
@@ -163,17 +163,17 @@ function main {
   if $install_packages; then
     __install_packages
   fi
-  
+
   if ! [[ -e "$DOTFILES" ]]; then
     mkdir -p "$DOTFILES"
-    
+
     if ! command -v git &>/dev/null; then
       __logger --error 'git not found. could not clone dotfiles'
       exit 1
     fi
     git clone 'https://github.com/Rid1-fz-06/.dotfiles.git' "$DOTFILES"
   fi
-  
+
   __link_config
 }
 
