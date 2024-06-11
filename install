@@ -19,7 +19,7 @@ __theaming_tools=(
 )
 
 __groups=(
-  "multimedia" "fonts"
+  "multimedia" "fonts" "vlc"
 )
 
 function __logger {
