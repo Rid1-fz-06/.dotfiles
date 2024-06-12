@@ -1,9 +1,9 @@
 --theme="Catppuccin Mocha"
 --style=numbers,changes
 --italic-text=always
---paging=never
+--paging=auto
 --color=always
-# --pager="less --SILENT --IGNORE-CASE --RAW-CONTROL-CHARS --quit-if-one-screen"
+--decorations=auto
 --map-syntax "*.ino:C++"
 --map-syntax "/home/*/.config/waybar/config:JSON"
 --map-syntax "/home/*/.config/dunst/dunstrc:TOML"
