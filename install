@@ -11,7 +11,7 @@ __required_packages=(
 
 __development_packages=(
   "freetype-devel" "cairo-devel" "pango-devel" "wayland-devel" "libxkbcommon-devel"
-  "scdoc" "harfbuzz" "wayland-protocols-devel" "meson" "ninja"
+  "scdoc" "harfbuzz" "wayland-protocols-devel" "meson" "ninja" "rustc" "cargo" "rustup"
 )
 
 __theming_tools=(
