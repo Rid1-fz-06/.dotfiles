@@ -89,18 +89,11 @@ chromium-browser --enable-features=UseOzonePlatform --ozone-platform=wayland
 
 ## Installation
 
-Clone this repository
-
-```bash
-mkdir -p $HOME/.dotfiles
-git clone --depth=1 'https://github.com/Rid1-fz-06/.dotfiles.git' "$HOME/.dotfiles"
-cd "$HOME/.dotfiles"
-```
-
 Run the installer
 
 ```bash
-./install
+bash <(curl --location 'https://raw.githubusercontent.com/Rid1-fz-06/.dotfiles/master/install')
+
 ```
 
 pass `--help` to installer for more options
