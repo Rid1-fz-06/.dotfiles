@@ -6,7 +6,7 @@ __required_packages=(
   "qt6-qtwayland" "qt5-qtwayland" "alacritty" "kvantum" "polkit-kde" "hyprpicker"
   "hyprland" "sddm" "ripgrep" "plocate" "eza" "fzf" "git" "nodejs" "zsh" "wlogout"
   "gh" "bat" "feh" "zathura" "zathura-pdf-poppler" "waybar" "symlinks" "trash-cli"
-  "neovim" "fd-find" "exiftool" "zsh-autosuggestions" "zsh-syntax-highlighting"
+  "neovim" "fd-find" "exiftool" "zsh-autosuggestions" "zsh-syntax-highlighting" "unzip"
 )
 
 __development_packages=(
