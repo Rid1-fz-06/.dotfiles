@@ -41,7 +41,7 @@ function __linker {
     --skip) __skip=true;;
     --backup) __skip=false;;
     *)
-      __logger --error 'invalied argument for __linker'
+      __logger --error 'invalid argument for __linker'
       exit 1;;
   esac
 
@@ -57,7 +57,7 @@ function __linker {
       __logger --info "skipping..."
       return
     fi
-    __logger --info "backing up $__target -> $__target.bak"
+    __logger --warning "backing up $__target -> $__target.bak"
     mv "$__target" "$__target.bak"
   fi
 
@@ -141,8 +141,8 @@ function usage {
 
 function main {
   local install_packages=true
-  while [ $# -gt 0 ]; do
-    case $1 in
+  while [ "$#" -gt 0 ]; do
+    case "$1" in
       -h | --help ) 
         usage
         exit 0
@@ -160,7 +160,7 @@ function main {
     shift
   done
 
-  if $install_packages; then
+  if "$install_packages"; then
     __install_packages
   fi
 
