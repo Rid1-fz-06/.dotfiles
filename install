@@ -1,6 +1,6 @@
 #!/bin/env bash
 
-DOTFILES=${DOTFILES:-${HOME}/.dotfiles}
+DOTFILES="${DOTFILES:-${HOME}/.dotfiles}"
 
 __required_packages=(
   "qt6-qtwayland" "qt5-qtwayland" "alacritty" "kvantum" "polkit-kde" "hyprpicker"
