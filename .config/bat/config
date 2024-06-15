@@ -1,5 +1,5 @@
 --theme="Catppuccin Mocha"
---style=numbers,changes
+--style=changes
 --italic-text=always
 --paging=auto
 --color=always
