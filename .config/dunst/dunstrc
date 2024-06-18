@@ -39,18 +39,18 @@ timeout = 3
 background = "#1E1E2EEE"
 foreground = "#CDD6F4"
 frame_color = "#CDD6F4"
-default_icon = /home/rid1/.config/dunst/icons/low.png
+default_icon = $XDG_CONFIG_HOME/dunst/icons/low.png
 
 [urgency_normal]
 timeout = 3
 background = "#1E1E2EEE"
 foreground = "#CDD6F4"
 frame_color = "#CDD6F4"
-default_icon = /home/rid1/.config/dunst/icons/normal.png
+default_icon = $XDG_CONFIG_HOME/dunst/icons/normal.png
 
 [urgency_critical]
 timeout = 0
 background = "#1E1E2EEE"
 foreground = "#FDDC74"
 frame_color = "#FDDC74"
-default_icon = /home/rid1/.config/dunst/icons/critical.png
+default_icon = $XDG_CONFIG_HOME/dunst/icons/critical.png
