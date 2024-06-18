@@ -6,6 +6,6 @@ GenericName=Process Viewer
 Comment=Show System Processes
 Icon=htop
 TryExec=htop
-Exec=bash -c 'alacritty --config-file $XDG_CONFIG_HOME/alacritty/no-maps.toml --title Htop --class htop -e htop'
+Exec=_htop_launcher
 Terminal=false
 Categories=System;Monitor;ConsoleOnly;

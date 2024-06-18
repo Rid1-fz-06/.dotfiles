@@ -1,0 +1,5 @@
+#!/bin/env bash
+
+config="${XDG_CONFIG_HOME:-${HOME}/.config}/alacritty/no-maps.toml"
+
+alacritty --config-file "$config" --title Htop --class htop -e htop

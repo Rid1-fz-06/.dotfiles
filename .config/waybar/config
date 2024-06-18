@@ -84,7 +84,7 @@
     "cpu": {
         "interval": 1,
         "format": " {usage}%",
-        "on-click": "alacritty --config-file $XDG_CONFIG_HOME/alacritty/no-maps.toml --title Htop --class htop -e htop",
+        "on-click": "_htop_launcher",
         "states": {
           "warning": 70,
           "critical": 90
@@ -96,7 +96,7 @@
         "interval": 1,
         "format": " {}%",
         "max-length": 10,
-        "on-click": "alacritty --config-file $XDG_CONFIG_HOME/alacritty/no-maps.toml --title Htop --class htop -e htop",
+        "on-click": "_htop_launcher",
         "states": {
           "warning": 70,
           "critical": 90
