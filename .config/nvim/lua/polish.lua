@@ -11,11 +11,21 @@ local function __terminal(command)
 end
 
 local ipython = __terminal("ipython")
-htop = __terminal("htop")
+local htop = __terminal("htop")
+local shell = __terminal(os.getenv("SHELL"))
 
 function _ipython_toggle()
 	ipython.dir = vim.fn.getcwd()
 	ipython:toggle()
+end
+
+function _htop_toggle()
+	htop:toggle()
+end
+
+function _shell_toggle(size, direction)
+	shell.dir = vim.fn.getcwd()
+	shell:toggle(size, direction)
 end
 
 -- script runner

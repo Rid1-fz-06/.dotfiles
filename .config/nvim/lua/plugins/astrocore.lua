@@ -11,11 +11,11 @@ return {
 		-- Configure core features of AstroNvim
 		features = {
 			large_buf = { size = 1024 * 500, lines = 10000 }, -- set global limits for large files for disabling features like treesitter
-			autopairs = true,                              -- enable autopairs at start
-			cmp = true,                                    -- enable completion at start
-			diagnostics_mode = 3,                          -- diagnostic mode on start (0 = off, 1 = no signs/virtual text, 2 = no virtual text, 3 = on)
-			highlighturl = true,                           -- highlight URLs at start
-			notifications = true,                          -- enable notifications at start
+			autopairs = true, -- enable autopairs at start
+			cmp = true, -- enable completion at start
+			diagnostics_mode = 3, -- diagnostic mode on start (0 = off, 1 = no signs/virtual text, 2 = no virtual text, 3 = on)
+			highlighturl = true, -- highlight URLs at start
+			notifications = true, -- enable notifications at start
 		},
 		-- Diagnostics configuration (for vim.diagnostics.config({...})) when diagnostics are on
 		diagnostics = {
@@ -57,7 +57,9 @@ return {
 				["<s-h>"] = { "<cmd>bp<cr>", desc = "Previous Buffer" },
 				["<Leader>tp"] = { "<cmd>lua _ipython_toggle()<cr>", desc = "Toggleterm IPython" },
 				["<Leader>r"] = { "<cmd>lua _run_script()<cr>", desc = "Run Script" },
-				["<Leader>tt"] = { "<cmd>lua htop:toggle()<cr>", desc = "Toggleterm Htop" },
+				["<Leader>tt"] = { "<cmd>lua _htop_toggle()<cr>", desc = "Toggleterm Htop" },
+				["<Leader>th"] = { '<cmd>lua _shell_toggle(10, "horizontal")<cr>', desc = "Horizontal Split" },
+				["<Leader>tv"] = { '<cmd>lua _shell_toggle(60, "vertical")<cr>', desc = "Vertical Split" },
 			},
 
 			-- terminal mode
