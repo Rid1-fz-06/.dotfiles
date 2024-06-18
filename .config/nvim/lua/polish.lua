@@ -20,6 +20,12 @@ end
 
 -- script runner
 
+local python_t = ipython
+local lua_t = __terminal([[lua -e "_PROMPT=\"\\n \"" -i]])
+local bash_t = __terminal([[env PS1="\n " bash --norc]])
+local sh_t = __terminal([[env PS1="\n " sh --norc]])
+local zsh_t = __terminal([[env PS1=$'\n'" " zsh --no-rcs]])
+
 function _run_script()
 	local filetype = vim.bo.filetype
 
@@ -35,11 +41,11 @@ function _run_script()
 
 	-- add functions to call interpretor and run script here
 	local runner = {
-		python = __run(ipython, [[%%run %s]]),
-		lua = __run(__terminal([[lua -e "_PROMPT=\"\\n \"" -i]]), [[assert(loadfile("%s"))()]]),
-		bash = __run(__terminal([[env PS1="\n " bash --norc]]), [[source %s]]),
-		sh = __run(__terminal([[env PS1="\n " sh --norc]]), [[source %s]]),
-		zsh = __run(__terminal([[env PS1=$'\n'" " zsh --no-rcs]]), [[source %s]]),
+		python = __run(python_t, [[%%run %s]]),
+		lua = __run(lua_t, [[assert(loadfile("%s"))()]]),
+		bash = __run(bash_t, [[source %s]]),
+		sh = __run(sh_t, [[source %s]]),
+		zsh = __run(zsh_t, [[source %s]]),
 	}
 
 	-- call function with appropriate filetype
