@@ -8,9 +8,10 @@ export SUDO_EDITOR="$VISUAL"
 export JAVA_HOME="/usr/java/latest"
 export MAMBA_NO_BANNER=1
 export MANROFFOPT="-c"
-export PAGER="moar"
-export MANPAGER="sh -c 'col -bx | bat -l man -p --paging=always --plain'"
-export BAT_PAGER="moar"
+export PAGER="most"
+# export MANPAGER="sh -c 'col -bx | bat -l man -p --paging=always --plain'"
+export MANPAGER="$PAGER"
+export BAT_PAGER="$PAGER"
 [ "$(basename "$SHELL")" = "zsh" ] && export HISTFILE=~/.zsh_history
 export HISTSIZE=100000
 export SAVEHIST=100000

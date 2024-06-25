@@ -32,7 +32,7 @@ These are my personal configs for the tools I use.
 - [wlogout](https://github.com/ArtsyMacaw/wlogout)
 - [fastfetch](https://github.com/fastfetch-cli/fastfetch)
 - [wl-clip-persist](https://github.com/Linus789/wl-clip-persist)
-- [moar](https://github.com/walles/moar)
+- [most](https://www.jedsoft.org/most)
 
 Almost all of these packages are included in the installer script
 
