@@ -2,10 +2,10 @@
 
 if [ $# -eq 0 ]; then
     alacritty --title Terminal
+elif [[ $1 = -* ]]; then
+    alacritty --title Terminal "$@"
+elif [[ -d "$1" ]]; then
+    alacritty --title Terminal --working-directory "$1"
 else
-    if [[ $1 = -* ]]; then
-        alacritty --title Terminal "$@"
-    else
-        alacritty --title Terminal --command "$@"
-    fi
+    alacritty --title Terminal --command "$@"
 fi

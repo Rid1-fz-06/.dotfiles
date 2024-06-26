@@ -1,7 +1,7 @@
 [Desktop Entry]
 Type=Application
 TryExec=alacritty
-Exec=bash -c 'alacritty --title Terminal --working-directory "$([ -n "$1" ] && echo "$1" || echo "$HOME")"' -o %U
+Exec=xdg-terminal-exec %U
 Icon=Terminal
 Terminal=false
 Categories=System;TerminalEmulator;
