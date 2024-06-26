@@ -9,7 +9,7 @@ zstyle ':vcs_info:git*' formats " [ %b  ]"
 
 function precmd() {
   vcs_info
-  print -rP $'\n%B%F{blue}%~%f'
+  print -rP $'\n%B%F{yellow}%n%f:%F{blue}[%~]%f%b'
 }
 
 # PS1='%B%F{blue}[%F{red}%n%F{white}@%F{green}%m %F{yellow}%1~%F{blue}]%f%b %(?.%F{blue}󰁕%f.%F{red}󰁕%f) '
