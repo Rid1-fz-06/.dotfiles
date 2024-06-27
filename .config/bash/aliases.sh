@@ -11,5 +11,4 @@ alias lla="eza --classify --oneline --color=always --icons --group-directories-f
 alias tree="eza --classify --icons --group-directories-first --tree"
 alias rm="trash"
 alias cdd="cd \$DOTFILES"
-alias open="xdg-open"
 # <<< aliases <<<

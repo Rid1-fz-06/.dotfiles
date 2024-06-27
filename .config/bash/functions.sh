@@ -30,4 +30,12 @@ function fw {
 		--preview-window 'up,60%,border-bottom,+{2}-5/5' \
 		--bind 'enter:become(nvim {1} +{2})'
 }
+
+function open {
+  if [[ -d "$1" ]]; then
+    cd "$1" || exit 1
+  else
+    xdg-open "$1"
+  fi
+}
 # <<< functions <<<
