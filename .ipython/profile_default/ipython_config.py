@@ -20,9 +20,9 @@ except pygments.util.ClassNotFound:
     import subprocess
     import importlib
 
+    subprocess.check_call(["python3", "-m", "pip", "install", "catppuccin[pygments]"])
     pygments.styles = importlib.reload(pygments.styles)
     pygments.util = importlib.reload(pygments.util)
-    subprocess.check_call(["python3", "-m", "pip", "install", "catppuccin[pygments]"])
     style = pygments.styles.get_style_by_name("catppuccin-mocha")
 
 c.TerminalInteractiveShell.highlighting_style = style
